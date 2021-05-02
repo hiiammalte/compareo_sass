@@ -1,0 +1,35 @@
+.subheader {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+
+    .subheader__heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-width: 0;
+        
+        > * {
+            margin: 0;
+            margin-bottom: 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            min-width: 0;
+        }
+    }
+
+    .subheader__controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        > * {
+            margin: 0;
+        }
+    }
+}

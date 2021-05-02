@@ -1,0 +1,21 @@
+@mixin clearfix() {
+    &::after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+  }
+
+@mixin transition($what: all, $time: 0.25s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+@mixin transform($degree: 45deg) {
+  -webkit-transform: rotate($degree);
+  -ms-transform: rotate($degree);
+  transform: rotate($degree);
+}

@@ -1,0 +1,86 @@
+@use '../abstracts/variables' as v;
+@use '../vendors/includemedia' as m;
+@use '../base/typography' as t;
+@use '../abstracts/mixins' as mixin;
+
+#carousel {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+
+    
+.carousel-card {
+    background-color: v.$light;
+    color: t.$base-font-color;
+    
+    box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.05);
+    border-radius: 0.75rem;
+    min-height: 15rem;
+    min-width: 12rem;
+    width: 12rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 1.5rem 1rem;
+  
+    @include mixin.transition (box-shadow 0.25s ease-out);
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &.active {
+        background-color: v.$primary;
+        color: t.$light-font-color;
+        box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$primary, 0.25);
+
+        &:hover {
+            background-color: darken(v.$primary, 2.5%);
+            box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$primary, 0.5);
+        }
+    }
+    &:hover {
+        box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.2);
+    }
+
+    .carousel-card__icon {
+        background-color: rgba(rgb(250, 226, 135), 0.8);
+        color: rgba(rgb(155, 131, 41), 0.8);
+        border-radius: 1.5rem;
+        height: 3rem;
+        width: 3rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-card__title {
+        font-size: 1rem;
+    }
+
+    .carousel-card__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-bottom: 0.75rem;
+
+        .counter {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 2.5rem;
+        }
+        .category {
+            font-size: 0.8rem;
+        }
+    }
+}
+}

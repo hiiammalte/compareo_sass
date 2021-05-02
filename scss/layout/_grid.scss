@@ -1,0 +1,102 @@
+@use '../vendors/includemedia' as m;
+@use '../abstracts/variables' as v;
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    min-height: 0;
+    overflow: auto;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    @include m.media(">tablet") {
+        padding: v.$grid-spacing-width;
+        grid-column-gap: v.$grid-spacing-width;
+        grid-template-columns: [logo-start] 6rem [logo-end heading-start main-start] 1fr [heading-end main-end];
+        grid-template-rows: [logo-start heading-start] 6rem [logo-end heading-end main-start] 1fr [main-end];
+    }
+    
+    @include m.media("<=tablet") {
+        grid-gap: 2* v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+        grid-template-columns: [heading-start] 0 [logo-start main-start] 6rem * v.$grid-spacing-small-screen-multiplicator [logo-end] 1fr [main-end] 0 [heading-end];
+        grid-template-rows: [logo-start heading-start] 6rem * v.$grid-spacing-small-screen-multiplicator [logo-end heading-end main-start] 1fr [main-end];
+    }
+
+    @include m.media("<=phone") {
+        grid-gap: v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+    }
+
+    #nav {
+        position: fixed;
+        
+        @include m.media(">tablet") {
+            top:0;
+            left:0;
+            bottom: 0;
+            padding: v.$grid-spacing-width;
+        }
+        
+        @include m.media("<=tablet") {
+            bottom:0;
+            left:0;
+            right:0;
+            padding: v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+        }
+    }
+
+    #header {
+        grid-column: heading;
+        grid-row: heading;
+        min-width: 0;
+
+        @include m.media(">tablet") {
+            padding: v.$grid-spacing-width;
+        }
+
+        @include m.media("<=tablet") {
+
+            background-color: v.$light;
+            position: sticky;
+            top: 0;
+            padding: v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator 2* v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+            padding-left: calc(6rem + 2 * #{v.$grid-spacing-width} * #{v.$grid-spacing-small-screen-multiplicator})
+        }
+
+        @include m.media("<=phone") {
+            padding: v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+            padding-left: calc(6rem * #{v.$grid-spacing-small-screen-multiplicator} + 2 * #{v.$grid-spacing-width} * #{v.$grid-spacing-small-screen-multiplicator})
+        }
+    }
+
+    #logo {
+        grid-column: logo;
+        grid-row: logo;
+
+        position: sticky;
+        top: 0;
+        margin: 0 auto;
+    }
+
+    #main {
+        grid-column: main;
+        grid-row: main;
+
+        min-width: 0;
+        min-height: 0;
+        margin:0;
+
+        @include m.media(">tablet") {
+            > * {
+                padding: 0 v.$grid-spacing-width;
+            }
+        }
+
+        @include m.media("<=tablet") {
+            > * {
+                padding: 0;
+            }
+        }
+    }
+}

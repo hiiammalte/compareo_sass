@@ -1,0 +1,51 @@
+@use '../abstracts/variables' as v;
+@use '../vendors/includemedia' as m;
+@use '../base/typography' as t;
+
+
+.badge {
+    margin: 0;
+    padding: 1rem;
+    height: 3rem;
+    min-width: 3rem !important;
+    border-radius: 1.5rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+        display: inline-block;
+        margin: auto;
+        line-height: 1.1;
+    }
+    > :not(:first-child) {
+        padding-left: 0.75rem;
+    }
+    > :not(i) {
+        padding: 0 0.25rem;
+    }
+    
+    &.badge-block {
+        width: 100%;
+        text-align: center;
+    }
+
+    @each $color, $value in v.$badge-colors {
+        &.badge-#{$color} {
+            background-color: $value;
+
+            @if (lightness($value) < 75%) {
+                color: t.$light-font-color !important;
+                * {
+                    color: t.$light-font-color !important;
+                }
+            } @else {
+                color: t.$base-font-color !important;
+                * {
+                    color: t.$base-font-color !important;
+                }
+            }
+        }
+    }
+}

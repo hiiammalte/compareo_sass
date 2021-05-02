@@ -1,0 +1,51 @@
+$breakpoints: (
+  'phone': 32em,
+  'tablet': 48em,
+  'desktop': 64em
+);
+
+$max-width: 64em;
+$grid-spacing-width: 1.5rem;
+$grid-spacing-small-screen-multiplicator: 2/3;
+
+$border-radius: 1.5rem;
+$border-radius-small: 0.75rem;
+
+$background-color: rgb(245, 245, 252);
+$floating_navbar-background-color: rgb(21, 23, 38);
+
+$primary:       #4e5bb7;
+$secondary:     #8f4d9e;
+$tertiary:      #FA9D5C;
+$success:       #328e4a;
+$danger:        #f23c3c;
+$light:         rgb(255, 255, 255);
+$dark:          rgb(26, 26, 26);
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "tertiary":   $tertiary,
+    "success":    $success,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+$badge-green: #54B56D;
+$badge-yellow: #FAE287;
+$badge-blue: #B1DCFA;
+
+$badge-colors: ();
+$badge-colors: map-merge(
+  (
+    "green":    $badge-green,
+    "yellow":  $badge-yellow,
+    "blue":   $badge-blue
+  ),
+  $badge-colors
+);

@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as v;
+@use '../vendors/includemedia' as m;
+@use '../base/typography' as t;
+
+$spacing: 0.5rem;
+
+table {
+    margin: -$spacing 0 0 0;
+    padding:  0;
+    border:none;
+    border-collapse: separate;
+    border-spacing: 0 $spacing;
+    font-size: 0.8rem;
+    
+    
+    tr {
+        background-color: rgba($color: #fff, $alpha: 1);
+        border-radius: 0.75rem;
+
+        &:hover {
+            box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.15);
+        }
+
+        td, th {
+            padding: 1rem 1.25rem;
+            border:none;
+            height: v.$grid-spacing-width * 2;
+            vertical-align: middle;
+
+            a {
+                color: t.$base-font-color;
+            }
+
+            &:first-child {
+                border-top-left-radius: 0.75rem;
+                border-bottom-left-radius: 0.75rem;
+            }
+            &:last-child {
+                border-top-right-radius: 0.75rem;
+                border-bottom-right-radius: 0.75rem;
+            }
+
+            &.align--right {
+                text-align: right;
+            }
+        }
+    }
+}

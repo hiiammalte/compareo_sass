@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as v;
+@use '../vendors/includemedia' as m;
+@use './typography' as t;
+
+html {
+  box-sizing: border-box;
+
+  body {
+    background-color: v.$background-color;
+  }
+}

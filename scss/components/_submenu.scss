@@ -1,0 +1,97 @@
+@use '../abstracts/variables' as v;
+@use '../vendors/includemedia' as m;
+@use '../base/typography' as t;
+@use '../abstracts/mixins' as mixin;
+
+#submenu {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+
+    .submenu-spacer {
+        margin: auto;
+    }
+    
+    .submenu-item {
+        background-color: v.$light;
+        color: t.$base-font-color;
+        
+        box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.05);
+        border-radius: 0.75rem;
+        min-height: 7.5rem;
+        min-width: 12rem;
+        width: 12rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        text-decoration: none;
+        padding: 1rem;
+        margin: 1.5rem 1rem;
+    
+        @include mixin.transition (box-shadow 0.25s ease-out);
+
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        
+        &:hover {
+            box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.2);
+        }
+
+        @each $color, $value in v.$badge-colors {
+            &.submenu-item-#{$color} {
+                background-color: $value;
+    
+                @if (lightness($value) < 75%) {
+                    color: t.$light-font-color !important;
+                    * {
+                        color: t.$light-font-color !important;
+                    }
+                    box-shadow: 0 0.25rem 1.5rem 0 rgba($value, 0.25);
+                    &:hover {
+                        background-color: darken($value, 2.5%);
+                        box-shadow: 0 0.25rem 1.5rem 0 rgba($value, 0.5);
+                    }
+                } @else {
+                    color: t.$base-font-color !important;
+                    * {
+                        color: t.$base-font-color !important;
+                    }
+                    box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.05);
+                    &:hover {
+                        background-color: lighten($value, 2.5%);
+                        box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.2);
+                    }
+                }
+            }
+        }
+
+        &.active {
+            background-color: v.$primary;
+            color: t.$light-font-color;
+            box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$primary, 0.25);
+
+            &:hover {
+                background-color: darken(v.$primary, 2.5%);
+                box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$primary, 0.5);
+            }
+        }
+
+        .submenu-item__counter {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 2.5rem;
+        }
+
+        .carousel-card__description {
+            font-size: 0.8rem;
+        }
+    }
+}

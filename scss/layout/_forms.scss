@@ -1,0 +1,273 @@
+@use '../vendors/includemedia' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mixin;
+
+.form-group {
+    padding-top: #{2 * v.$grid-spacing-width - 0.5rem};
+    padding-bottom: 0.5rem;
+}
+
+.input-group {
+    position: relative;
+    padding: 1.75rem 0 0.75rem 0;
+
+    .input-label {
+        position: absolute;
+        top: #{v.$grid-spacing-width + 1.25rem};
+        left: 1.25rem;
+        color: rgba(v.$light, 0.5) !important;
+
+        @include mixin.transition (position 0.25s ease);
+        pointer-events: none;
+        transform-origin: 0 0;
+    }
+    .input-label-static {
+        position: absolute;
+        top: 0.5rem;
+        left: 1.25rem;
+        font-size: 0.72rem;
+        color: v.$light !important;
+        pointer-events: none;
+    }
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea {
+    position: relative;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border-radius: v.$border-radius;
+    background-color: rgba(v.$light, 0.2);
+    border: none;
+
+    @include mixin.transition (background-color 0.25s ease);
+
+    &:hover {
+        background-color: rgba(v.$light, 0.25); 
+    }
+    
+    &:focus {
+        outline: none;
+        background-color: rgba(v.$light, 0.25);
+
+        ~ .input-label {
+            transform: translateY(-2.25rem) scale(.9);
+            color: rgba(v.$light, 1) !important;
+        }
+        &::placeholder {
+            color: rgba(v.$light, 0.5);
+        }
+    }
+
+    &:invalid {
+        box-shadow: 0 0 0 1pt v.$danger;
+    }
+
+    &::placeholder {
+        color: transparent;
+    }
+    
+    &:required ~ .input-label::after {
+        content: "*";
+    }
+    
+    &:not(:placeholder-shown) ~ .input-label {
+        transform: translateY(-2.25rem) scale(.9);
+        color: rgba(v.$light, 1) !important;
+    }
+}
+
+.toggle-group {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+
+    border-radius: v.$border-radius;
+    border: none;
+    cursor: pointer;
+
+    background-color: rgba(v.$light, 0.2);
+    @include mixin.transition (background-color 0.25s ease);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover {
+        outline: none;
+        background-color: rgba(v.$light, 0.25);
+    }
+
+    input[type=checkbox] {
+        position: absolute;
+        visibility: hidden;
+    
+        &:checked + .toggle-switch {
+            background-color: v.$badge-green;
+            &:before {
+                left: 2rem;
+            }
+        }
+    }
+    
+    .toggle-switch {
+        display: inline-block;
+        background-color: rgba(v.$light, 0.25);
+        border-radius: 1rem;
+        width: 4rem;
+        height: 2rem;
+        position: relative;
+        vertical-align: middle;
+    
+        &:before,
+        &:after {
+            content: "";
+        }
+    
+        &:before {
+            display: block;
+            background: v.$light;
+            border-radius: 1rem;
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            @include mixin.transition (left 0.25s ease);
+            background: v.$light;
+        }
+    }
+    
+    .toggle-label {
+        margin-left: 0.75rem;
+    }
+}
+
+
+.checkbox-group {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+    margin-bottom: 0.5rem;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: v.$border-radius;
+    border: none;
+    cursor: pointer;
+
+    background-color: rgba(v.$light, 0.2);
+    @include mixin.transition (background-color 0.25s ease);
+
+    &:hover {
+        outline: none;
+        background-color: rgba(v.$light, 0.25);
+    }
+
+    input[type=checkbox] {
+        position: absolute;
+        visibility: hidden;
+    
+        &:checked ~ .checkmark {
+            background-color: v.$badge-green;
+            &:after {
+                display: block;
+            }
+        }
+    }
+      
+    .checkmark {
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: rgba(v.$light, 0.25);;
+    
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+    
+            left: 1.3rem;
+            top: 1.15rem;
+            width: 6px;
+            height: 10px;
+            border: solid v.$light;
+            border-width: 0 3px 3px 0;
+
+            @include mixin.transform (45deg);
+        }
+    }
+
+    .checkbox-label {
+        margin-left: 0.75rem;
+    }
+}
+
+.radio-group {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+    margin-bottom: 0.5rem;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: v.$border-radius;
+    border: none;
+    cursor: pointer;
+
+    background-color: rgba(v.$light, 0.2);
+    @include mixin.transition (background-color 0.25s ease);
+
+    &:hover {
+        outline: none;
+        background-color: rgba(v.$light, 0.25);
+    }
+    
+
+    input[type=radio] {
+        position: absolute;
+        visibility: hidden;
+    
+        &:checked ~ .checkmark {
+            background-color: v.$badge-green;
+            &:after {
+                display: block;
+            }
+        }
+    }
+      
+    .checkmark {
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: rgba(v.$light, 0.25);;
+    
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+    
+            left: 1.1rem;
+            top: 1.1rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: v.$light;
+            border-radius: 0.4rem;
+
+            @include mixin.transform (45deg);
+        }
+    }
+
+    .radio-label {
+        margin-left: 0.75rem;
+    }
+}
+  
+
+  

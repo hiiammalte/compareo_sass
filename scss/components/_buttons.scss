@@ -1,0 +1,95 @@
+@use '../abstracts/variables' as v;
+@use '../vendors/includemedia' as m;
+@use '../base/typography' as t;
+@use '../abstracts/mixins' as mixin;
+
+.nav-btn {
+    display: inline-block;
+    background-color: rgba(#fff, 0.1);
+    color: #fff;
+    border-radius: 1.5rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    > * {
+        display: inline-block;
+    }
+
+    @each $color, $value in v.$theme-colors {
+        &.nav-btn-#{$color} {
+            &.temporary {
+                background-color: $value;
+            }
+            &.active {
+                background-color: $value;
+            }
+            &:hover {
+                background-color: darken($value, 5%);
+            }
+        }
+    }
+}
+  
+.action-btn {
+    margin: 0;
+    padding: 1rem;
+    height: 3rem;
+    min-width: 3rem !important;
+    border-radius: 1.5rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    @include mixin.transition (box-shadow 0.25s ease-out);
+
+    > * {
+        display: inline-block;
+        margin: auto;
+        line-height: 1.1;
+    }
+    > :not(:first-child) {
+        padding-left: 0.75rem;
+    }
+    > :not(i) {
+        padding: 0 0.25rem;
+    }
+    
+    &.action-btn-block {
+        width: 100%;
+        text-align: center;
+    }
+
+    @each $color, $value in v.$theme-colors {
+        &.action-btn-#{$color} {
+            background-color: $value;
+
+            @if (lightness($value) < 75%) {
+                color: t.$light-font-color !important;
+                * {
+                    color: t.$light-font-color !important;
+                }
+                box-shadow: 0 0.25rem 1.5rem 0 rgba($value, 0.25);
+                &:hover {
+                    background-color: darken($value, 2.5%);
+                    box-shadow: 0 0.25rem 1.5rem 0 rgba($value, 0.5);
+                }
+            } @else {
+                color: t.$base-font-color !important;
+                * {
+                    color: t.$base-font-color !important;
+                }
+                box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.05);
+                &:hover {
+                    background-color: lighten($value, 2.5%);
+                    box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$dark, 0.2);
+                }
+            }
+        }
+    }
+}

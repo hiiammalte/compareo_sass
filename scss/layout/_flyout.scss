@@ -1,0 +1,100 @@
+@use '../vendors/includemedia' as m;
+@use '../abstracts/variables' as v;
+
+$flyout--width: 30rem;
+$flyout__background-color: v.$primary;
+
+#flyout {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    overflow: hidden;
+
+    display: grid;
+    grid-row-gap: v.$grid-spacing-width;
+    grid-template-columns: [heading-start main-start footer-start] 1fr [heading-end main-end footer-end];
+    grid-template-rows: [heading-start] auto [heading-end main-start] 1fr [main-end footer-start] auto [footer-end];
+
+    background-color: $flyout__background-color;
+    border-radius: v.$grid-spacing-width;
+
+    height: calc(100% - #{2 * v.$grid-spacing-width});
+    margin: v.$grid-spacing-width;
+    padding: v.$grid-spacing-width;
+
+    @include m.media(">=tablet") {
+        width: $flyout--width;
+        right: ($flyout--width + v.$grid-spacing-width) * -1;
+    }
+  
+    @include m.media("<tablet") {
+        width: calc(100% - #{2 * v.$grid-spacing-width});
+        right: calc(100% + #{v.$grid-spacing-width});
+    } 
+
+    * {
+        color: v.$light;
+        
+        min-width: 0;
+        min-height: 0;
+    }
+
+    input[type=date]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+    }
+
+    &.active {
+        right: 0;
+    }
+
+    #flyout__header {
+        grid-column: heading;
+        grid-row: heading;
+
+        position: sticky;
+        top: 0;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        > :first-child {
+            padding-top: 0.5rem;
+        }
+    }
+
+    #flyout__main {
+        grid-column: main;
+        grid-row: main;
+        max-height: 100%;
+        white-space: nowrap;
+        overflow-y: auto;
+        margin: 0 -0.75rem;
+
+        > * {
+            padding: 0 0.75rem;
+        }
+    }
+
+    #flyout__footer {
+        grid-column: footer;
+        grid-row: footer;
+        margin-top: auto;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+
+#flyout__background.active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px);
+    z-index: 199;
+}

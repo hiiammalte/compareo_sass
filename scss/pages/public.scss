@@ -1,0 +1,189 @@
+@charset 'UTF-8';
+
+@use '../base/reset';
+@use '../base/base';
+@use '../base/typography';
+@use '../base/scrollbar';
+
+@use '../layout/forms';
+@use '../layout/logo';
+@use '../layout/main';
+
+@use '../components/badges';
+@use '../components/buttons';
+
+@use '../vendors/includemedia' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mixin;
+
+#public {
+    height: 100vh;
+    width: 100vw;
+    min-height: 0;
+    overflow: auto;
+
+    display: grid;
+    justify-content: center;
+    //align-content: center;
+
+    @include m.media(">tablet") {
+        grid-gap: v.$grid-spacing-width;
+        padding: v.$grid-spacing-width;
+        grid-template-columns: [logo-start main-start footer-start] 6rem [logo-end title-start] 1fr [title-end main-end footer-end login-start] 22rem [login-end];
+        grid-template-rows: [logo-start title-start login-start] 6rem [logo-end title-end main-start] 1fr [main-end footer-start] auto [footer-end login-end];
+    }
+    
+    @include m.media("<=tablet") {
+        grid-gap: v.$grid-spacing-width;
+        grid-template-columns: [login-start] 0 [logo-start main-start footer-start] 6rem * v.$grid-spacing-small-screen-multiplicator [logo-end title-start] 1fr [main-end footer-end] 0 [title-end login-end];
+        grid-template-rows: [logo-start title-start] 6rem [logo-end title-end main-start] 50vh [main-end footer-start] auto [footer-end login-start] auto [login-end];
+    }
+
+    @include m.media("<=phone") {
+        grid-gap: v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+    }
+
+    #logo {
+        grid-column: logo;
+        grid-row: logo;
+
+        position: sticky;
+        top: 0;
+        margin: 0 auto;
+    }
+
+    #title {
+        grid-column: title;
+        grid-row: title;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: -3rem;
+
+        @include m.media("<=tablet", ">phone") {
+            margin-left: -2rem;
+        }
+        @include m.media("<=phone") {
+            margin-left: -1.5rem;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        position: sticky;
+        top: 0;
+    }
+
+    #main {
+        grid-column: main;
+        grid-row: main;
+
+        min-width: 0;
+        min-height: 0;
+        margin:0;
+
+        @include m.media(">tablet") {
+            > * {
+                padding: 0 v.$grid-spacing-width;
+            }
+        }
+
+        @include m.media("<=tablet") {
+            > * {
+                padding: 0;
+            }
+        }
+    }
+
+    #footer {
+        grid-column: footer;
+        grid-row: footer;
+        font-size: 0.9rem;
+    }
+    
+    #login {
+        grid-column: login;
+        grid-row: login;
+
+        width: 100%;
+        height: 100%;
+        z-index: 200;
+        
+        padding: v.$grid-spacing-width;
+        background-color: v.$primary;
+        @include mixin.transition (box-shadow 0.25s ease-out);
+
+        display: grid;
+        grid-template-columns: [heading-start main-start] 1fr [heading-end main-end];
+        grid-template-rows: [heading-start] 1fr [heading-end main-start] 3fr [main-end];
+        
+        &:hover {
+            box-shadow: 0 0.25rem 1.5rem 0 rgba(v.$primary, 0.5);
+        }
+
+        @include m.media(">tablet") {
+            grid-row-gap: v.$grid-spacing-width;
+            border-radius: v.$grid-spacing-width;
+        }
+
+        @include m.media("<=tablet") {
+            grid-row-gap: 0;
+            border-top-left-radius: 2 * v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+            border-top-right-radius: 2 * v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+        }
+
+        @include m.media("<=phone") {
+            padding: v.$grid-spacing-width * v.$grid-spacing-small-screen-multiplicator;
+        }
+
+        * {
+            color: v.$light;
+            min-width: 0;
+            min-height: 0;
+        }
+    
+        #login__header {
+            grid-column: heading;
+            grid-row: heading;
+            text-align: center;
+
+            @include m.media(">tablet") {
+                position: sticky;
+                top: 0;
+            }
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            > :first-child {
+                padding-top: 0.5rem;
+            }
+        }
+
+        #login__main {
+            grid-column: main;
+            grid-row: main;
+
+            text-align: center;
+
+            @include m.media(">tablet") {
+                max-height: 100%;
+                white-space: nowrap;
+                overflow-y: auto;
+                margin: 0 -0.75rem;
+
+                > * {
+                    padding: 0 0.75rem;
+                }
+            }
+
+            .form-submit {
+                padding: 1.5rem 0;
+            }
+        }
+    }
+}

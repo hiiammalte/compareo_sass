@@ -1,4 +1,4 @@
-# compareo_sass - SCSS-based UI build upon 7-1 SASS architecture
+# compareo_sass - SCSS-based UI build upon 7-1 architecture
 
 This is the UI part of the compareo app.
 

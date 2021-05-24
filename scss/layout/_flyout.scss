@@ -1,5 +1,6 @@
 @use '../vendors/includemedia' as m;
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mixin;
 
 $flyout--width: 30rem;
 $flyout__background-color: v.$primary;
@@ -30,8 +31,10 @@ $flyout__background-color: v.$primary;
   
     @include m.media("<tablet") {
         width: calc(100% - #{2 * v.$grid-spacing-width});
-        right: calc(100% + #{v.$grid-spacing-width});
-    } 
+        right: calc(-100% + #{v.$grid-spacing-width});
+    }
+
+    @include mixin.transition (right, 0.25s, ease-out);
 
     * {
         color: v.$light;
@@ -89,12 +92,19 @@ $flyout__background-color: v.$primary;
 
 }
 
-#flyout__background.active {
+#flyout__background {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    backdrop-filter: blur(5px);
     z-index: 199;
+    backdrop-filter: blur(0);
+    @include mixin.transition (backdrop-filter, 0.25s, ease-out, 0.25s);
+}
+
+#flyout__background.active {
+    display: inline-block;
+    backdrop-filter: blur(5px);
 }

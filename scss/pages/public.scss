@@ -113,7 +113,7 @@
         
         padding: v.$grid-spacing-width;
         background-color: v.$primary;
-        @include mixin.transition (box-shadow 0.25s ease-out);
+        @include mixin.transition (box-shadow, 0.25s, ease-out);
 
         display: grid;
         grid-template-columns: [heading-start main-start] 1fr [heading-end main-end];

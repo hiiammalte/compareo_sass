@@ -6,12 +6,12 @@
     }
   }
 
-@mixin transition($what: all, $time: 0.25s, $how: ease-in-out) {
-    -webkit-transition: $what $time $how;
-    -moz-transition:    $what $time $how;
-    -ms-transition:     $what $time $how;
-    -o-transition:      $what $time $how;
-    transition:         $what $time $how;
+@mixin transition($what: all, $time: 0.25s, $how: ease-in-out, $delay: 0s) {
+    -webkit-transition: $what $time $how $delay;
+    -moz-transition:    $what $time $how $delay;
+    -ms-transition:     $what $time $how $delay;
+    -o-transition:      $what $time $how $delay;
+    transition:         $what $time $how $delay;
 }
 
 @mixin transform($degree: 45deg) {

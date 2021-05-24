@@ -116,11 +116,11 @@ p:last-of-type {
 
 a {
   color: #fff;
-  -webkit-transition: all 0.25s ease 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease 0.25s ease-in-out;
-  -ms-transition: all 0.25s ease 0.25s ease-in-out;
-  -o-transition: all 0.25s ease 0.25s ease-in-out;
-  transition: all 0.25s ease 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -ms-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
 }
 a:hover {
   color: #cccccc;
@@ -280,16 +280,19 @@ html body {
   position: relative;
   padding: 1.75rem 0 0.75rem 0;
 }
+.input-group.input-group-compact {
+  padding: 1.75rem 0 0 0;
+}
 .input-group .input-label {
   position: absolute;
   top: 2.75rem;
   left: 1.25rem;
   color: rgba(255, 255, 255, 0.5) !important;
-  -webkit-transition: position 0.25s ease 0.25s ease-in-out;
-  -moz-transition: position 0.25s ease 0.25s ease-in-out;
-  -ms-transition: position 0.25s ease 0.25s ease-in-out;
-  -o-transition: position 0.25s ease 0.25s ease-in-out;
-  transition: position 0.25s ease 0.25s ease-in-out;
+  -webkit-transition: position 0.25s ease 0s;
+  -moz-transition: position 0.25s ease 0s;
+  -ms-transition: position 0.25s ease 0s;
+  -o-transition: position 0.25s ease 0s;
+  transition: position 0.25s ease 0s;
   pointer-events: none;
   transform-origin: 0 0;
 }
@@ -310,11 +313,11 @@ textarea {
   border-radius: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
-  -webkit-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -moz-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -ms-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -o-transition: background-color 0.25s ease 0.25s ease-in-out;
-  transition: background-color 0.25s ease 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
 }
 input:not([type=checkbox]):not([type=radio]):hover,
 textarea:hover {
@@ -334,8 +337,8 @@ input:not([type=checkbox]):not([type=radio]):focus::placeholder,
 textarea:focus::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-input:not([type=checkbox]):not([type=radio]):invalid,
-textarea:invalid {
+input:not([type=checkbox]):not([type=radio]).invalid,
+textarea.invalid {
   box-shadow: 0 0 0 1pt #f23c3c;
 }
 input:not([type=checkbox]):not([type=radio])::placeholder,
@@ -360,11 +363,11 @@ textarea:not(:placeholder-shown) ~ .input-label {
   border: none;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.2);
-  -webkit-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -moz-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -ms-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -o-transition: background-color 0.25s ease 0.25s ease-in-out;
-  transition: background-color 0.25s ease 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -403,11 +406,11 @@ textarea:not(:placeholder-shown) ~ .input-label {
   width: 2rem;
   height: 2rem;
   position: absolute;
-  -webkit-transition: left 0.25s ease 0.25s ease-in-out;
-  -moz-transition: left 0.25s ease 0.25s ease-in-out;
-  -ms-transition: left 0.25s ease 0.25s ease-in-out;
-  -o-transition: left 0.25s ease 0.25s ease-in-out;
-  transition: left 0.25s ease 0.25s ease-in-out;
+  -webkit-transition: left 0.25s ease 0s;
+  -moz-transition: left 0.25s ease 0s;
+  -ms-transition: left 0.25s ease 0s;
+  -o-transition: left 0.25s ease 0s;
+  transition: left 0.25s ease 0s;
   background: white;
 }
 .toggle-group .toggle-label {
@@ -426,11 +429,11 @@ textarea:not(:placeholder-shown) ~ .input-label {
   border: none;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.2);
-  -webkit-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -moz-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -ms-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -o-transition: background-color 0.25s ease 0.25s ease-in-out;
-  transition: background-color 0.25s ease 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
 }
 .checkbox-group:hover {
   outline: none;
@@ -471,6 +474,56 @@ textarea:not(:placeholder-shown) ~ .input-label {
   margin-left: 0.75rem;
 }
 
+.compact-checkbox-group {
+  position: relative;
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+.compact-checkbox-group:hover {
+  outline: none;
+}
+.compact-checkbox-group input[type=checkbox] {
+  position: absolute;
+  visibility: hidden;
+}
+.compact-checkbox-group input[type=checkbox]:checked ~ .checkmark {
+  background-color: #54B56D;
+}
+.compact-checkbox-group input[type=checkbox]:checked ~ .checkmark:after {
+  display: block;
+}
+.compact-checkbox-group .checkmark {
+  display: inline-block;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.compact-checkbox-group .checkmark:after {
+  content: "";
+  position: relative;
+  display: none;
+  left: 0.45rem;
+  top: 0.25rem;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.compact-checkbox-group .checkbox-label {
+  margin-left: 0.75rem;
+}
+
 .radio-group {
   position: relative;
   width: 100%;
@@ -483,11 +536,11 @@ textarea:not(:placeholder-shown) ~ .input-label {
   border: none;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.2);
-  -webkit-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -moz-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -ms-transition: background-color 0.25s ease 0.25s ease-in-out;
-  -o-transition: background-color 0.25s ease 0.25s ease-in-out;
-  transition: background-color 0.25s ease 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease 0s;
+  -moz-transition: background-color 0.25s ease 0s;
+  -ms-transition: background-color 0.25s ease 0s;
+  -o-transition: background-color 0.25s ease 0s;
+  transition: background-color 0.25s ease 0s;
 }
 .radio-group:hover {
   outline: none;
@@ -567,7 +620,7 @@ textarea:not(:placeholder-shown) ~ .input-label {
     position: fixed;
     bottom: 1.5rem;
     right: 2rem;
-    z-index: 10;
+    z-index: 120;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -720,11 +773,11 @@ textarea:not(:placeholder-shown) ~ .input-label {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  -webkit-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  -moz-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  -ms-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  -o-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
+  -webkit-transition: box-shadow 0.25s ease-out 0s;
+  -moz-transition: box-shadow 0.25s ease-out 0s;
+  -ms-transition: box-shadow 0.25s ease-out 0s;
+  -o-transition: box-shadow 0.25s ease-out 0s;
+  transition: box-shadow 0.25s ease-out 0s;
 }
 .action-btn > * {
   display: inline-block;
@@ -914,11 +967,11 @@ textarea:not(:placeholder-shown) ~ .input-label {
   z-index: 200;
   padding: 1.5rem;
   background-color: #4e5bb7;
-  -webkit-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  -moz-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  -ms-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  -o-transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
-  transition: box-shadow 0.25s ease-out 0.25s ease-in-out;
+  -webkit-transition: box-shadow 0.25s ease-out 0s;
+  -moz-transition: box-shadow 0.25s ease-out 0s;
+  -ms-transition: box-shadow 0.25s ease-out 0s;
+  -o-transition: box-shadow 0.25s ease-out 0s;
+  transition: box-shadow 0.25s ease-out 0s;
   display: grid;
   grid-template-columns: [heading-start main-start] 1fr [heading-end main-end];
   grid-template-rows: [heading-start] 1fr [heading-end main-start] 3fr [main-end];

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compareo Design</title>
+        <link
+            href="assets/css/main.css"
+            rel="stylesheet"
+            type="text/css">
+        <link
+            href="assets/vendors/fontawesome/css/fontawesome.min.css"
+            rel="stylesheet"
+            type="text/css">
+        <link
+            href="assets/vendors/fontawesome/css/solid.min.css"
+            rel="stylesheet"
+            type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <div id="flyout" class="active">
+            <div id="flyout__header">
+                <h3>New Project</h3>
+                <a href="#" class="action-btn action-btn-dark" id="close__button">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            <div id="flyout__main">
+                <form id="f1">
+                    <div class="form-group">
+                        <h6>What is it about?</h6>
+                        <div class="input-group">
+                            <input type="text" id="i1" placeholder=" " required />
+                            <label class="input-label" for="i1">Name of project</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="i2" placeholder=" " />
+                            <label class="input-label" for="i2">Short description</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h6>What are we comparing?</h6>
+                        <div class="input-group">
+                            <label class="input-label-static">Category</label>
+                            <div class="select-group">
+                                <span class="select-arrow"></span>
+                                <select>
+                                    <option>Insurances</option>
+                                    <option>Cars</option>
+                                    <option>Consumer Goods</option>
+                                    <option>Software</option>
+                                </select>
+                            </div>
+                        </div> 
+                    </div>
+                </form>
+            </div>
+            <div id="flyout__footer">
+                <div></div>
+                <button type="submit" form="f1" class="action-btn action-btn-dark">
+                    <span>Submit</span>
+                    <i class="fas fa-check"></i>
+                </button>
+            </div>
+        </div>
+        <div id="flyout__background" class="active"></div>
+
+        <div id="nav">
+            <div id="nav__content">
+                <div id="functions">
+                    <div class="nav-btn nav-btn-primary active">
+                        <i class="fa fa-exchange-alt"></i>
+                    </div>
+                    <div class="nav-btn nav-btn-primary">
+                        <i class="fa fa-users"></i>
+                    </div>
+                </div>
+                <div id="extra">
+                    <div class="nav-btn nav-btn-primary">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <div class="nav-btn nav-btn-success temporary">
+                        <i class="fa fa-crown"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="logo">
+            <img src="assets/img/logo.svg" alt="" />
+        </div>
+
+        <div id="header">
+            <div id="header__content-aware">
+                <div class="title">
+                    <h3>Comparison Projects</h3>
+                </div>
+                <div class="action">
+                    <a href="#" class="action-btn action-btn-primary" id="add__button">
+                        <i class="fas fa-plus"></i>
+                        <span>New Project</span>
+                    </a>
+                </div>
+            </div>
+            <div id="header__controls">
+                <a href="#" class="action-btn action-btn-light">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="action-btn action-btn-light">
+                    <i class="fa fa-sign-out-alt"></i>
+                </a>
+            </div>
+        </div>
+        <div id="main"></div>
+    </div>
+
+    <script>
+        $(function () {
+            $('#add__button').click(function(){
+                $('#flyout').toggleClass("active", true);
+                $('#flyout__background').toggleClass("active", true);
+            });
+            $('#close__button').click(function(){
+                $('#flyout').toggleClass("active", false);
+                $('#flyout__background').toggleClass("active", false);
+            });
+            $('#flyout__background').click(function(){
+                $('#flyout').toggleClass("active", false);
+                $('#flyout__background').toggleClass("active", false);
+            });
+        })
+    </script>
+  </body>
+</html>

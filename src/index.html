@@ -11,119 +11,15 @@
           type="text/css">
       <link
           href="assets/vendors/fontawesome/css/fontawesome.min.css"
-          rel="stylesheet">
+          rel="stylesheet"
+          type="text/css">
       <link
           href="assets/vendors/fontawesome/css/solid.min.css"
-          rel="stylesheet">
+          rel="stylesheet"
+          type="text/css">
   </head>
   <body>
     <div id="app">
-      <div id="flyout" class="active">
-        <div id="flyout__header">
-          <h3>Neuen Vergleich erstellen</h3>
-          <a href="#" class="action-btn action-btn-dark">
-            <i class="fas fa-times"></i>
-          </a>
-        </div>
-        <div id="flyout__main">
-          <form id="f1">
-            <div class="form-group">
-              <h6>Worum geht es?</h6>
-              <div class="input-group">
-                <input type="text" id="i1" placeholder=" " required>
-                <label class="input-label" for="i1">Name des Produktes</label>
-              </div>
-              <div class="input-group">
-                <input type="text" id="i2" placeholder=" ">
-                <label class="input-label" for="i2">Hersteller</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <h6>Worum geht es?</h6>
-              <div class="input-group">
-                <input type="text" id="i1" placeholder="T3st" required>
-                <label class="input-label" for="i1">Name des Produktes</label>
-              </div>
-              <div class="input-group">
-                <textarea type="text" id="i2" placeholder=" " rows="5"></textarea>
-                <label class="input-label" for="i2">Hersteller</label>
-              </div>
-              <div class="input-group">
-                <input type="number" id="i3" placeholder="Zahl zwischen 1-10" min="0" max="10"></textarea>
-                <label class="input-label" for="i3">Hersteller</label>
-              </div>
-              <div class="input-group">
-                <input type="date" id="i4"></textarea>
-                <label class="input-label" for="i4">Hersteller</label>
-              </div>
-              <div class="input-group">
-                <label class="toggle-group">
-                  <input class="toggle-checkbox" type="checkbox">
-                  <div class="toggle-switch"></div>
-                  <span class="toggle-label">Bluetooth</span>
-                </label>
-                <label class="input-label-static">Hersteller</label>
-              </div>
-              <div class="input-group">
-                <label class="toggle-group">
-                  <input type="checkbox">
-                  <div class="toggle-switch"></div>
-                  <span class="toggle-label">Bluetooth</span>
-                </label>
-              </div>
-              <div class="input-group">
-                <label class="checkbox-group">
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                  <span class="checkbox-label">Bluetooth</span>
-                </label>
-              </div>
-              <div class="input-group">
-                <label class="radio-group">
-                  <input type="radio" name="fruits" value="banana">
-                  <span class="checkmark"></span>
-                  <span class="radio-label">Bluetooth</span>
-                </label>
-                <label class="radio-group">
-                  <input type="radio" name="fruits" value="apple" checked="checked">
-                  <span class="checkmark"></span>
-                  <span class="radio-label">Bluetooth</span>
-                </label>
-                <label class="radio-group">
-                  <input type="radio" name="fruits" value="kiwi">
-                  <span class="checkmark"></span>
-                  <span class="radio-label">Bluetooth</span>
-                </label>
-                <label class="input-label-static">Hersteller</label>
-              </div>
-
-              <div class="input-group">
-                <label class="input-label-static">Category</label>
-                <div class="select-group">
-                  <span class="select-arrow"></span>
-                  <select>
-                    <option>Insurances</option>
-                    <option>Cars</option>
-                    <option>Consumer Goods</option>
-                    <option>Software</option>
-                  </select>
-                </div>
-              </div>  
-                
-            </div>
-          </form>
-          
-        </div>
-        <div id="flyout__footer">
-          <div></div>
-          <button type="submit" form="f1" class="action-btn action-btn-dark">
-            <span>Speichern</span>
-            <i class="fas fa-check"></i>
-          </a>
-        </div>
-      </div>
-      <div id="flyout__background" class="active"></div>
-
       <div id="nav">
         <div id="nav__content">
           <div id="functions">
@@ -150,12 +46,12 @@
       <div id="header">
         <div id="header__content-aware">
           <div class="title">
-            <h3>Produktvergleiche</h3>
+            <h3>Comparison Projects</h3>
           </div>
           <div class="action">
             <a href="#" class="action-btn action-btn-primary">
               <i class="fas fa-plus"></i>
-              <span>Neuer Vergleich</span>
+              <span>New Project</span>
             </a>
           </div>
         </div>
@@ -171,7 +67,7 @@
   
       <div id="main">
         <div id="main__content-aware">
-          <h3>Produktvergleiche</h3>
+          <h3>Comparison Projects</h3>
         </div>
         <div id="main__actions-aware">
           <div class="action-btn action-btn-primary">
@@ -182,57 +78,57 @@
         <div id="carousel">
           <a href="#" class="carousel-card active">
             <div class="carousel-card__icon">
-              <i class="fa fa-shopping-basket"></i>
+              <i class="fa fa-shield-alt"></i>
             </div>
-            <p class="carousel-card__title">Hausrat- versicherungen</p>
+            <p class="carousel-card__title">Household contents insurances</p>
             <div class="carousel-card__description">
               <span class="counter">24</span>
-              <small class="category">Produkte hinterlegt</small>
+              <small class="category">Products added</small>
             </div>
           </a>
 
           <a href="#" class="carousel-card">
             <div class="carousel-card__icon">
-              <i class="fa fa-shopping-basket"></i>
+              <i class="fa fa-car"></i>
             </div>
-            <p class="carousel-card__title">Hausrat- versicherungen</p>
+            <p class="carousel-card__title">Next family car</p>
             <div class="carousel-card__description">
-              <span class="counter">24</span>
-              <small class="category">Produkte hinterlegt</small>
+              <span class="counter">6</span>
+              <small class="category">Products added</small>
+            </div>
+          </a>
+          <a href="#" class="carousel-card">
+            <div class="carousel-card__icon">
+              <i class="fa fa-laptop"></i>
+            </div>
+            <p class="carousel-card__title">Management Software</p>
+            <div class="carousel-card__description">
+              <span class="counter">13</span>
+              <small class="category">Products added</small>
             </div>
           </a>
           <a href="#" class="carousel-card">
             <div class="carousel-card__icon">
               <i class="fa fa-shopping-basket"></i>
             </div>
-            <p class="carousel-card__title">Hausrat- versicherungen</p>
+            <p class="carousel-card__title">Flat TVs</p>
             <div class="carousel-card__description">
-              <span class="counter">24</span>
-              <small class="category">Produkte hinterlegt</small>
-            </div>
-          </a>
-          <a href="#" class="carousel-card">
-            <div class="carousel-card__icon">
-              <i class="fa fa-shopping-basket"></i>
-            </div>
-            <p class="carousel-card__title">Hausrat- versicherungen</p>
-            <div class="carousel-card__description">
-              <span class="counter">24</span>
-              <small class="category">Produkte hinterlegt</small>
+              <span class="counter">8</span>
+              <small class="category">Products added</small>
             </div>
           </a>
         </div>
 
         <div class="subheader">
           <div class="subheader__heading">
-            <h6>Produktvergleiche zum ausgewählten Projekt</h6>
+            <h6>Product comparison overview</h6>
           </div>
           <div class="subheader__controls">
             <label class="switch">
               <input id="switch-1" name="switch" type="radio" checked>
-              <label for="switch-1">Alle anzeigen</label>
+              <label for="switch-1">Show all</label>
               <input id="switch-2" name="switch" type="radio">
-              <label for="switch-2">Nur Auswertungen</label>
+              <label for="switch-2">Incomplete only</label>
               <div class="switch-btn switch-btn-tertiary"></div>
             </label>
           </div>

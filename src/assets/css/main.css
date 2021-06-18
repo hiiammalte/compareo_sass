@@ -705,7 +705,7 @@ select:not(:placeholder-shown) ~ .input-label {
 .select-group:after {
   content: "";
   position: absolute;
-  top: 2.7rem;
+  top: 2.75rem;
   right: 1.15rem;
   width: 10px;
   height: 10px;

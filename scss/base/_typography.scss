@@ -8,9 +8,9 @@
 $font-family: Nunito, sans-serif;
 $base-font-size: 100%;
 
-$base-font-color: #151726;
-$link-font-color: #fff;
-$light-font-color: #fff;
+$base-font-color: v.$dark;
+$link-font-color: v.$dark;
+$light-font-color: v.$light;
 
 // Paragraph Styles
 $paragraph-color      : $base-font-color;

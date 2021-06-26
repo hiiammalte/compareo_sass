@@ -11,6 +11,29 @@ This is the UI part of the compareo app.
 - uses Font Awesome 5 icon library
 - includes demo pages in "src/"-folder
 
+## What's included?
+Overview of folders structure within this project. All subfolders withing the "scss" folder follow the 7-1 architecture. The "src" folder contains the generated CSS output files as well as a bunch of html-files for demonstration purposes.
+
+    .
+    ├── scss
+    │   ├── abstracts           # Functions, Mixins and global Variables
+    │   ├── base                # Base, Reset, Typography and scrollbar configuration
+    │   ├── components          # Elements such as Buttons, Badges, Tables, ...
+    │   ├── layout              # Grid, Header, Navigation, Logo, Forms, ... 
+    │   ├── pages               # Single Pages that require different layouts and independent CSS
+    │   ├── themes              # empty (can be used for creating multiple themes)
+    │   ├── vendors             # 3rd party libraries (Font Awesome and include-media)
+    │   └── main.scss           # File that imports all subfolder content, is used for compiling CSS
+    └── src
+        ├── assets
+        │   ├── css             # Output directory for all compiled CSS files 
+        │   └── ...
+        ├── create.html         # Demo of form and flyout menu
+        ├── details.html        # Demo of project details page
+        ├── index.html          # Demo of projects overview page
+        ├── login.html          # Demo of login page
+        └── register.html       # Demo of registration page
+
 ## Technologies
 
 This project utilizes the following Technologies / Node Packages:
